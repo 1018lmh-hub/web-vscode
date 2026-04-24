@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>2. 표만들기</title>
+    <style>
+        table{
+            border : 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        표(table) : row + cell 로 구성됨
+        많은 데이터를 정리해서 표현하고자 할 때 사용
+         
+        표를 구성하는 요소 : <table>, <tr>, <th>, <td>
+            + <thead>, <tbody>, <tfoot>
+
+        table 요소로 감싸고 
+        tr요소로 자식요소를 만들고(행을 구성)
+        th, td로 열을 구성
+
+        table : 표를 하나 만들어주는 요소
+        tr : 한 행을 나타내는 요소
+        td : 일반 셀을 나타내는 요소
+
+        th : 열의 제목셀을 나타내는 요소
+    -->
+
+    <!--열 합치기 colspan, 행 합치기 lowspan-->
+   <table>
+        <tr>
+            <th colspan="2">제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+            <th>좋아요</th>
+        </tr>
+        <tr>
+            <td>11251532</td>
+            <td>버버리 프레야</td>
+            <td>Illuminati1988</td>
+            <td>12:22</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1241512</td>
+            <td>여성백팩</td>
+            <td>그랑블루1196</td>
+            <td>12:21</td>
+            <td>0</td>
+            <td>0</td>
+        </tr><tr>
+            <td>121523</td>
+            <td>이세이미야케 플리츠</td>
+            <td>hakunamatat</td>
+            <td>12:20</td>
+            <td>2</td>
+            <td>0</td>
+        </tr>
+
+   </table> 
+    
+    <br>
+    <br*10>
+    <!-- 자동완성이랑 곱하기 어케함
+     처음 시작할 때 !, < 안쓰고 td*10 이런 식으로-->
+
+</body>
+</html>

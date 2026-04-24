@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>구조잡기 연습!</title>
+
+    <style>
+        div{
+            border: 1px solid red;
+            box-sizing: border-box; 
+            /*원래 %를 이용해서 부모요소의 일정 비율만큼 크기를 할당할 때,
+            콘텐트 값을 기준으로 할당하기 때문에 box-sizing으로 기준을 변경*/
+        }
+        
+        #wrap{
+            width: 1000px;
+            height: 800px;
+            margin:auto;/*이거 없으면 기본은 왼쪽정렬인가*/
+        }
+
+        #wrap > div{
+            width: 100%;
+        }
+
+        #header, footer{
+            height: 200px;
+            height: 25%;
+        }
+
+        #main{
+            height: 400px;
+            height: 50%;
+        }
+
+/*         
+        #footer{
+            height: 200px;
+        }
+            */
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="main"></div>
+        <div id="footer"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>푸터</title>
+
+    <style>
+
+        footer, div, p{
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        footer{
+            width: 1000px;
+            height: 160px;
+        }
+
+        /* 위에는 냅두고 밑에 세부 스타일만 작성 
+         아 크기는 어차피 이전 작업에서 부모요소로 들어가니까 
+         여기는 그 크기를 고려해서 작업쳐야하니까 써놓고 확인하는 용도구나 */
+
+         footer{
+            background-color: #f9f9f9;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+         }
+         
+         #footer_1{
+            border-bottom: 1px solid #fafafa;
+            background-color: #f5f5f5;
+            padding: 8px;
+         }
+
+         #footer_1>a{
+            color: #1a1a1a;
+            text-decoration: none;
+            border-right: 1px solid #1a1a1a;
+            margin-right: 16px;
+            padding-right: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 30px;
+
+            &:hover{
+                color : #cc5555;
+            }
+         }
+         #footer_1>a:last-child{
+            border-right: none;
+         }
+
+         #footer_2>p{
+            margin: 0;
+         }
+
+         #p_1{
+            font-size: 12px;
+            color: #323232;
+            padding: 8px;
+            margin-top: 12px;
+            margin-bottom: 6px;
+         }
+
+         #p_2{
+            font-size: 11px;
+            color: #999999;
+            padding: 8px;
+         }
+
+    </style>
+</head>
+<body>
+
+    <footer>
+        <div id="footer_1">
+            <!-- 만들 때 a태그에 넣을 거 없으면 #넣음 -->
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">인재 채용 문의</a>
+            <a href="#">훈련비 게시</a>
+            <a href="#">강사 구인</a>
+        </div>
+        <div id="footer_2">
+            <p id="p_1">
+                KH정보교육원 ｜ 사업자등록번호 : 487-86-00763 ｜ 사업자등록번호 : 851-87-00622 ｜ 서울 강남 제2014-01호 ｜ 대표자 : 양진선
+            </p>
+            <p id="p_2">
+                Copyright © 1998-2026 KH Information Educational Institute All Right Reserved
+            </p>
+
+        </div>
+    </footer>
+    
+</body>
+</html>

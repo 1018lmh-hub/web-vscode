@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>글꼴을 바꾸어볼까요</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+    <style>
+        #ff1{
+            font-family: 궁서체;
+        }
+        #ff2{
+            font-family: 돋움체;
+        }
+      
+       
+        #ff3 {
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        #fs1{
+            font-size: 16px; /*기본 사이즈*/
+        }
+        #fs2{
+            font-size: 2em; /*(원래 글꼴 크기 본인꺼)글자크기 기준 부모사이즈의 두배*/
+        }
+        #fs3{
+            font-size: 200%; /*부모요소로부터 상속받은 것 기준 부모사이즈의 두배*/
+        }
+
+        #fw1{
+            font-weight: 400; /*기본크기*/
+        }
+        #fw2{
+            font-weight: bold;/*bold <- 700, bolder <- 부모요소보다 두껍게, 그러면 300더하는건가*/
+        }
+        #fw3{
+            font-weight: lighter;/*부모요소보다 더 얇게*/
+        }
+    </style>
+</head>
+<body>
+    <!--.gugi-regular-->
+    <h1>글꼴 관련 스타일 속성</h1>
+
+    <h3>font-family : 글꼴을 지정할 때 사용</h3>
+
+    <pre>
+        선택자{
+            font-family : 바꾸고 싶은 글꼴;
+        }
+    </pre>
+
+
+    <p id="ff1">글꼴테스트1</p>
+    <p id="ff2">글꼴테스트2</p>
+    <p id="ff3">글꼴테스트3</p>
+
+    <h2>외부 웹 폰트 사용!</h2>
+
+    <p>
+        웹 폰트 사이트
+        <a href="http://fonts.google.com" target="_blank">
+            구글 웹 폰트
+        </a>
+    </p>
+
+    <hr>
+
+    <h3>font-size : 글꼴의 크기를 변경할 때 사용하는 속성</h3>
+
+    <pre>
+        선택자{
+            font-size : 바꾸고싶은크기;
+        }
+    </pre>
+
+    <ul>
+        <li id="fs1">사이즈테스트</li>
+        <li id="fs2">사이즈테스트</li>
+        <li id="fs3">사이즈테스트</li>
+    </ul>
+
+    <hr>
+
+    <h3>font-weight:글꼴의 두께를 바꾸고 싶을 때 사용</h3>
+
+    <pre>
+        선택자{
+            font-weight : normal / bold / bolder / lighter
+                        / 100~900
+        }
+    </pre>
+
+    <ul>
+        <li id="fw1">글씨두께</li>
+        <li id="fw2">글씨두께</li>
+        <li id="fw3">글씨두께</li>
+    </ul>
+
+    <ul>
+        <li style="font-style: italic;">폰트스타일</li>
+    </ul>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

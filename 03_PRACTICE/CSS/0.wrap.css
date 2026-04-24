@@ -1,0 +1,66 @@
+        div, header, main, aside, footer{
+            border: 1px solid red;
+            box-sizing: border-box;
+            
+        }
+
+        #wrap{
+            width: 1200px;
+            height: 2156px;
+            margin: auto;
+          
+            display: flex;
+            flex-direction: column;
+        }
+
+        header{
+            /* height: 3%; 이렇게 하면 안좋나 */
+            flex: 4;
+            display: flex;
+
+        }
+        #header_1{
+            flex: 5;
+        }
+        #header_2{
+            flex: 5;    
+        }
+
+        main{
+            flex: 70;
+            display: flex;
+            flex-direction: column;
+        }
+        #content_1{
+            flex: 16;
+        }
+        #content_2{
+            flex: 17;
+        }
+        #content_3{
+            flex: 1;
+        }
+
+        aside{
+            position: fixed;
+            margin-right: 0px;
+            width: 100px;
+            /* 이거 width %로 주면 부모요소 영향 왜 안받지 fixed라 그런가 */
+            /* absolute position 이용해보기 */
+            height: 600px;
+            background-color: #eeeeee;
+            top: 100px;
+            right: 200px;
+            z-index: 0;
+        }
+
+        footer{
+            flex: 13;
+            display: flex;
+        }
+        #footer_1{
+            flex: 5;
+        }
+        #footer_2{
+            flex: 5;
+        }

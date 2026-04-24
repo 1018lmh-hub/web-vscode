@@ -1,0 +1,11 @@
+aside{
+    position: fixed;
+    margin-right: 0px;
+    width: 100px;
+    /* 이거 width %로 주면 부모요소 영향 왜 안받지 fixed라 그런가 */
+    height: 600px;
+    background-color: #eeeeee;
+    top: 100px;
+    right: 200px;
+    z-index: 0;
+}
