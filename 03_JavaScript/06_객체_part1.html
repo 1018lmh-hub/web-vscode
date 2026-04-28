@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>쉽쉽</title>
+
+    <style>
+        body{
+            background-color: black;
+            color: wheat;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .area{
+            background-color: white;
+            color: black;
+            border: 1px solid whitesmoke;
+        }
+
+        .small{
+            height: 300px;
+        }
+
+        .big{
+            height: 500px;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            box-sizing: border-box;
+
+        }
+        #wrap{
+            width: 1200px;
+            height: 400px;
+            margin: auto;
+            box-shadow: 1px 2px 12px lightgrey;
+        }
+
+        
+
+        .card{
+            width: 230px;
+            height: 360px;
+            padding-bottom: 10px;
+            display: inline-block;
+
+            &:hover{
+                box-shadow: 1px 2px 6px lightgrey;
+            }
+        } 
+        .card img{
+            width: 100%;
+            height: 300px;
+        }
+         .card h4{
+            font-weight: 600px;
+            font-size: 17px;
+         } 
+         .card p{
+            font-size: 14px;
+            font-weight: 500;
+         }
+
+         .pic{
+            display: inline-block;
+            margin-right: 10px;
+            
+            &:hover{
+                box-shadow: 1px 2px 6px lightgrey;
+            }
+         }
+    </style>
+</head>
+<body>
+    <h1>객체</h1>
+
+    <p>
+        property(속성) + value(속성값)를 한 쌍으로 저장하는 자료구조 <br>
+        여러개의 속성을 하나의 변수에 담을 수 있게 사용하는 데이터 타입 <br> <br>
+
+        자바로 따지면 => DTO / VO / Map
+
+        -객체는 중괄호 {} 를 사용해서 선언 <br>
+        중괄호 안에 객체, 가져야할 속성(Property)를 정의함 <br>
+        참고로 속성값은 모든 자료형 전부 가능
+    </p>
+
+    <div id="area" class="area big">1</div>
+
+    <button onclick="createObj();">자바스크립트 별 없</button>
+
+    <script>
+        function createObj(){
+            //네이버 웹툰
+            // 데이터베이스 -> 웹툰 -> 웹툰의 정보를 저장
+
+            /*
+                WebToon TABLE
+                WEBTOON_NO  |   WEBTOON_NAME    |   WEBTOON_AUTHOR  |   DAY_OF_THE_WEEK |   COOKIE
+                -----------------------------------------------------------------------------------
+                     1      |      캐슬2        |       정연        |       수요일       |      3
+                    ...
+                    ...
+                ----------------------------------------------------------------------------------
+                Webtoon
+                private int webtoonNo;  
+                private String webtoonName;
+                private String webtoonAuthor;
+                private String dayOfTheWeek;
+                private int cookie;
+
+                Webtoon castle = new Webtoon(1,"캐슬2", "정연", "수요일", 3);
+
+            */
+
+            //웹툰 정보 DB에서 조회해옴
+            //웹툰번호 - 1          number
+            //웹툰제목 - 캐슬2      string
+            //작가님   - 정연       string
+            //요일     - 수요일     string
+            //쿠기     - 3          number
+
+            const array = [
+                1,
+                '캐슬2',
+                '정연',
+                '수요일',
+                3
+            ];
+
+            const castle = {
+                "webtoonNo" : 1,
+                "webtoonName" : "캐슬2",
+                "webtoonAuthor" : "정연",
+                "dayOfTheWeek" : "수요일",
+                "cookie" : 3
+                // 쌍따옴표 안붙여도 돌아가긴 함 찍는 게 좋긴함 나중에 사용할 기능에 
+                // 이렇게 하는 게 좋아서 기억해두고 습관 들이기
+            };
+
+            console.log(array);
+            console.log(castle);
+
+            const area = document.querySelector('#area');
+            area.innerHTML = `배열 : ${array}<br>
+                              객체 : ${castle}<br>
+                              <strong>1번 방법</strong><br>
+                              웹툰번호 : ${castle.webtoonNo}<br>
+                              제목 : ${castle.webtoonName}<br>
+                              작가 : ${castle.webtoonAuthor}<br>
+                              <strong>2번 방법</strong><br>
+                              요일 : ${castle["dayOfTheWeek"]}<br>
+                              쿠기 : ${castle["cookie"]}<br>`;
+        }
+    </script>
+
+    <div id="wrap">
+
+        
+        <button onclick="webtoon();">웹툰 봐야징 ㅎ</button>
+    </div>
+
+    <script>
+        function 요청보내는함수(){
+            //저기 컨트롤러가서 뭐 받아옴~
+        };
+
+        function webtoon(){
+            요청보내는함수();
+            //자바에서는 1 웹툰 == 1DTO
+            //                  * 5
+            //             List<WebtoonDto>
+            // webtoonDTO
+            // private String image;
+            // private String name;
+            // private String author;
+            
+            
+            const webtoons = [
+
+                {
+                    "image" : "https://image-comic.pstatic.net/webtoon/850103/thumbnail/thumbnail_IMAG21_d4a4a73c-a07c-4c17-bdbc-bc4b8e873792.jpg",
+                    "title" : "이세계에서 유부남된 썰",
+                    "author" : "판테라, 팀 포레스티브/ 김혜령 / 베르헤라"
+                },{
+                    "image" : "https://image-comic.pstatic.net/webtoon/850103/thumbnail/thumbnail_IMAG21_d4a4a73c-a07c-4c17-bdbc-bc4b8e873792.jpg",
+                    "title" : "이세계에서 유부남된 썰",
+                    "author" : "판테라, 팀 포레스티브/ 김혜령 / 베르헤라"
+
+                },{
+                    "image" : "https://image-comic.pstatic.net/webtoon/850103/thumbnail/thumbnail_IMAG21_d4a4a73c-a07c-4c17-bdbc-bc4b8e873792.jpg",
+                    "title" : "이세계에서 유부남된 썰",
+                    "author" : "판테라, 팀 포레스티브/ 김혜령 / 베르헤라"
+
+                },{
+                    "image" : "https://image-comic.pstatic.net/webtoon/850103/thumbnail/thumbnail_IMAG21_d4a4a73c-a07c-4c17-bdbc-bc4b8e873792.jpg",
+                    "title" : "이세계에서 유부남된 썰",
+                    "author" : "판테라, 팀 포레스티브/ 김혜령 / 베르헤라"
+
+                },{
+                    "image" : "https://image-comic.pstatic.net/webtoon/850103/thumbnail/thumbnail_IMAG21_d4a4a73c-a07c-4c17-bdbc-bc4b8e873792.jpg",
+                    "title" : "이세계에서 유부남된 썰",
+                    "author" : "판테라, 팀 포레스티브/ 김혜령 / 베르헤라"
+
+                }
+
+            ];
+
+            console.log(webtoons);
+
+            const el = webtoons.map(w => `<div class="card">
+                                          <image src="${w.image}"/>
+                                          <h4> ${w.title}<h4/>
+                                          <p> ${w.author}<p/>
+                                          </div>`).join('');
+            document.querySelector('#wrap').innerHTML = el;
+
+
+                                           
+        }
+    </script>
+
+    <!-- 실스읍..
+        주제를 하나 정해서 위 웹툰 목록을 출력했던 것처럼
+        자바스크립트의 객체 배열을 만들어서
+        객체가 가지고 있는 속성 값을 반복문을 이용해서 화면상에 출력하시오. 
+    -->
+
+    <div id="area1" class="area wrap">
+    </div>
+
+      <button onclick="localSpecialty();">지역특산물보기</button>
+
+    <script>
+        function localSpecialty(){
+            const localSpecialties = [
+                {
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/261304_MF_BIMG_01_TMB.jpg",
+                    "specialty" : "인삼",
+                    "local" : "경기도>포천시"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/257893_MF_BIMG_01_TMB.jpg",
+                    "specialty" : "여주가지",
+                    "local" : "경기도>여주시"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/257883_MF_BIMG_01_TMB.jpg",
+                    "specialty" : "표고버섯",
+                    "local" : "경기도>광주시"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/257844_MF_BIMG_01_TMB.jpg",
+                    "specialty" : "깻잎",
+                    "local" : "경기도>남양주시"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/253190_MF_BIMG_01_TMB.JPG",
+                    "specialty" : "베리베리 사과농원 잼",
+                    "local" : "경기도>연천군"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/246064_MF_BIMG_01_TMB.jpg",
+                    "specialty" : "치즈",
+                    "local" : "경기도>양주시"
+                },{
+                    "image" : "https://www.nongsaro.go.kr/cms_contents/1015/103861_MF_BIMG_01_TMB.png",
+                    "specialty" : "김포포도",
+                    "local" : "경기도>김포시"
+                }
+            ];
+
+            console.log(localSpecialties);
+
+            const el = localSpecialties.map(ls => `<div class ="pic">
+                                                   <image src="${ls.image}"/>
+                                                   <dl>
+                                                   <dt>${ls.specialty}</dt>
+                                                   <dd>${ls.local}</dd>
+                                                   </dl>
+                                                   </div>`).join('');
+
+            document.querySelector('#area1').innerHTML = el;
+        }
+    </script>
+    
+    
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+</body>
+</html>
