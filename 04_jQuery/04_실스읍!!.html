@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>실습 3개</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+
+
+    <div id="plant"></div>
+
+    <button onclick="back();" type="button" class="btn btn-dark">이전</button>
+    <button onclick="next();" type="button" class="btn btn-dark">다음</button>
+    
+    <strong id="page">1</strong>
+  
+
+    <script>
+
+        $(function(){
+            plantInfo();
+        });
+
+        let page = 1;
+        function next(){
+            page++;
+            plantInfo(page);
+            $('#page').html(`-${page}-`);
+        };
+
+        function back(){
+            if(page != 1){
+            page--;
+            plantInfo(page)
+            $('#page').html(`-${page}-`);
+            }
+        };
+        
+// src href alt
+
+
+        function plantInfo(page){
+            if(!page) page=1;
+            $.ajax({
+                url :'https://apis.data.go.kr/1390802/ClusterSeedInfo/getSeedResrceList?serviceKey=9d1c5db0d24312de355ff85d457e580b7c2196346ded3461a3150030a423c2ca&Page_Size=6&bgng_Ymd=20100429&end_Ymd=20200429&page_No=' + page,
+                // dataType : 'json',
+                success : e =>{
+                    const result = e.response.body.items.item;
+                    
+                    // console.log(result.response.body.items.item);
+                    console.log(result);
+                    console.log(e);
+
+                    const el = result.map(e=>`
+                                                 <div class="card" style="width: 18rem;">
+                                                    <div class="card-body">
+                                                        <p class="card-text">자원명 : ${e.rsrceNm}</p>
+                                                        <p class="card-text">학명 : ${e.sciNm}</p>
+                                                        <p class="card-text">작물명 : ${e.cropsNm}</p>
+                                                        <p class="card-text">과명 : ${e.familyNm}</p>
+                                                        <p class="card-text">자원구분 : ${e.rsrceSe}</p>
+                                                        <p class="card-text">원산지 : ${e.orgnNm}</p>
+                                                        <p class="card-text">자원종류대분류(보존형태) : ${e.rsrceKndLclsfNm}</p>
+                                                    </div>
+                                                </div>   
+                                             `).join('');
+                    document.querySelector('#plant').innerHTML = el;
+
+
+
+                    
+                }
+
+            });
+        }
+    </script>
+    <!-- 
+         사진이랑 이름만 붙이고 나머지는 클릭하면 상세정보로 넘기기
+    -->
+    
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
